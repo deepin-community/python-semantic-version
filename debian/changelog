@@ -1,0 +1,83 @@
+python-semantic-version (2.8.5-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Remove remove-non-ascii-in-sphinx-doc.patch.
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 09 Sep 2020 09:08:12 +0200
+
+python-semantic-version (2.8.4-2) unstable; urgency=medium
+
+  * Uploading to unstable.
+
+ -- Thomas Goirand <zigo@debian.org>  Fri, 08 May 2020 11:40:48 +0200
+
+python-semantic-version (2.8.4-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Rebase remove-non-ascii-in-sphinx-doc.patch.
+  * Fix d/copyright ordering and years.
+  * Standards-Version: 4.5.0.
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 07 Apr 2020 12:36:38 +0200
+
+python-semantic-version (2.8.2-2) unstable; urgency=medium
+
+  * Uploading to unstable.
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 22 Oct 2019 19:42:57 +0200
+
+python-semantic-version (2.8.2-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Refreshed patches.
+
+ -- Thomas Goirand <zigo@debian.org>  Mon, 23 Sep 2019 17:52:26 +0200
+
+python-semantic-version (2.6.0-3) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Use debhelper-compat instead of debian/compat.
+
+  [ Thomas Goirand ]
+  * Removed Python 2 support (Closes: #938162).
+
+ -- Thomas Goirand <zigo@debian.org>  Fri, 13 Sep 2019 14:46:09 +0200
+
+python-semantic-version (2.6.0-2) unstable; urgency=medium
+
+  * Uploading to unstable.
+
+ -- Thomas Goirand <zigo@debian.org>  Mon, 03 Sep 2018 17:08:46 +0200
+
+python-semantic-version (2.6.0-1) experimental; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/rules: Changed UPSTREAM_GIT protocol to https
+  * d/copyright: Changed source URL to https protocol
+  * d/control: Use team+openstack@tracker.debian.org as maintainer
+  * d/control: Set Vcs-* to salsa.debian.org
+
+  [ Daniel Baumann ]
+  * Updating copyright format url.
+  * Updating maintainer field.
+  * Running wrap-and-sort -bast.
+  * Removing gbp.conf, not used anymore or should be specified in the
+    developers dotfiles.
+
+  [ Thomas Goirand ]
+  * New upstream release.
+  * Hard build-depends on openstack-pkg-tools.
+  * Removed Pre-Depends: dpkg (>= 1.15.6~).
+  * Swiched to debhelper 10.
+  * Now using pkgos-dh_auto_install.
+  * Rewrote fixed-privacy-breach.patch.
+  * Not running unit tests for now: process gets stuck.
+  * Add remove-non-ascii-in-sphinx-doc.patch.
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 28 Aug 2018 10:28:00 +0200
+
+python-semantic-version (2.3.1-1) unstable; urgency=medium
+
+  * Initial release. (Closes: #780189)
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 10 Mar 2015 09:35:05 +0100

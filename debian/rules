@@ -1,0 +1,30 @@
+#!/usr/bin/make -f
+
+UPSTREAM_GIT := https://github.com/rbarrois/python-semanticversion.git
+include /usr/share/openstack-pkg-tools/pkgos.make
+
+%:
+	dh $@ --buildsystem=python_distutils --with python3,sphinxdoc
+
+override_dh_auto_clean:
+	rm -rf build
+	find . -iname '*.pyc' -delete
+	for i in $$(find . -type d -iname __pycache__) ; do rm -rf $$i ; done
+
+override_dh_auto_build:
+	echo "Do nothing..."
+
+override_dh_auto_install:
+	pkgos-dh_auto_install --no-py2
+
+override_dh_auto_test:
+ifeq (,$(findstring nocheck, $(DEB_BUILD_OPTIONS)))
+	echo "Not running unit tests for now: process gets stuck."
+	#set -e ; for pyvers in $(PYTHONS) $(PYTHON3S); do \
+	#	python$$pyvers -W default setup.py test ; \
+	#done
+endif
+
+override_dh_sphinxdoc:
+	PYTHONPATH=. PYTHON=python3 python3 -m sphinx -b html docs debian/python-semantic-version-doc/usr/share/doc/python-semantic-version-doc/html
+	dh_sphinxdoc -O--buildsystem=python_distutils

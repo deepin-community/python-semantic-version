@@ -1,0 +1,49 @@
+Source: python-semantic-version
+Section: python
+Priority: optional
+Maintainer: Debian OpenStack <team+openstack@tracker.debian.org>
+Uploaders:
+ Thomas Goirand <zigo@debian.org>,
+Build-Depends:
+ debhelper-compat (= 10),
+ dh-python,
+ openstack-pkg-tools (>= 99~),
+ python3-all,
+ python3-setuptools,
+ python3-sphinx,
+Build-Depends-Indep:
+ python3-django,
+ python3-sphinx-rtd-theme,
+Standards-Version: 4.5.0
+Vcs-Browser: https://salsa.debian.org/openstack-team/python/python-semantic-version
+Vcs-Git: https://salsa.debian.org/openstack-team/python/python-semantic-version.git
+Homepage: https://github.com/rbarrois/python-semanticversion
+
+Package: python-semantic-version-doc
+Section: doc
+Architecture: all
+Depends:
+ ${misc:Depends},
+ ${sphinxdoc:Depends},
+Description: implementing the SemVer scheme - doc
+ This small Python library provides a few tools to handle SemVer in Python. It
+ follows strictly the 2.0.0 version of the SemVer scheme. semantic_version can
+ also support versions which wouldn't match the semantic version scheme by
+ converting a version such as 0.1.2.3.4 into 0.1.2+3.4.
+ .
+ This package contains the documentation.
+
+Package: python3-semantic-version
+Architecture: all
+Depends:
+ ${misc:Depends},
+ ${python3:Depends},
+Suggests:
+ python-semantic-version-doc,
+Description: implementing the SemVer scheme - Python 3.x
+ This small Python library provides a few tools to handle SemVer in Python. It
+ follows strictly the 2.0.0 version of the SemVer scheme. semantic_version can
+ also support versions which wouldn't match the semantic version scheme by
+ converting a version such as 0.1.2.3.4 into 0.1.2+3.4.
+ .
+ This package contains the Python 3.x module.
